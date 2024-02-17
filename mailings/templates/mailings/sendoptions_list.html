@@ -1,4 +1,4 @@
-{% extends 'mailer/base.html' %}
+{% extends 'mailings/base.html' %}
 {% block content %}
 {% load my_tags %}
 {% if not request.user|has_group:"manager" %}
@@ -8,9 +8,9 @@
     <div class="col-3">
         <div class="btn-group mb-1" role="group">
             <a class="btn btn-warning" style="width: 10rem;"
-               href=" {% url 'mailer:create_mailer' %}">Создать рассылку</a>
+               href=" {% url 'mailings:create_mailer' %}">Создать рассылку</a>
             <a class="btn btn-dark"
-               href="{% url 'mailer:logs' %}">Отчет</a>
+               href="{% url 'mailings:logs' %}">Отчет</a>
         </div>
     </div>
 </div>
@@ -44,17 +44,17 @@
             <td>{{ object.mail_title }}</td>
             {% if not request.user|has_group:"manager" %}
             <td>
-                <a class="btn btn-info" href="{% url 'mailer:edit_mailer' object.pk %}"
+                <a class="btn btn-info" href="{% url 'mailings:edit_mailer' object.pk %}"
                    role="button">Редактировать</a>
             </td>
             <td>
-                <a class="btn btn-danger" href="{% url 'mailer:delete_mailer' object.pk %}"
+                <a class="btn btn-danger" href="{% url 'mailings:delete_mailer' object.pk %}"
                    role="button">Удалить</a>
             </td>
             {% else %}
             {% if object.is_active %}
              <td>
-                <a class="btn btn-danger" href="{% url 'mailer:edit_mailer' object.pk %}"
+                <a class="btn btn-danger" href="{% url 'mailings:edit_mailer' object.pk %}"
                    role="button">Деактивировать</a>
              </td>
             {% else %}

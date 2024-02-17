@@ -1,4 +1,4 @@
-{% extends 'mailer/base.html' %}
+{% extends 'mailings/base.html' %}
 {% block content %}
 <div class="container" align="center">
     <br/>
@@ -12,7 +12,7 @@
                         <button type="submit"
                                 class="btn btn-md btn-outline-danger">Подтвердить
                         </button>
-                        <a href="{% url 'mailer:client_list'%}" type="button"
+                        <a href="{% url 'mailings:client_list'%}" type="button"
                            class="btn btn-md btn-outline-warning">Отмена</a>
                     </div>
                 </form>

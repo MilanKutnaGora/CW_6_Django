@@ -1,10 +1,10 @@
-{% extends 'mailer/base.html' %}
+{% extends 'mailings/base.html' %}
 {% block content %}
 <html style="font-size: 16px;" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="​We design digital products and brands">
+    <meta name="keywords" content="We design digital products and brands">
     <meta name="description" content="">
     <title>Page 10</title>
     <link rel="stylesheet" href="/nicepage.css?version=0a3e576c-2a57-443b-b188-d16acf9e5983"
@@ -268,7 +268,7 @@
 
                 </ul>
                 <div class="btn-group">
-                    <a href="{% url 'blog:article' object.slug %}" type="button"
+                    <a href="{% url 'blogs:article' object.slug %}" type="button"
                        class="btn btn-md btn-outline-warning">Перейти</a>
                 </div>
             </div>

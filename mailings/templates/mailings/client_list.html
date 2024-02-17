@@ -1,11 +1,11 @@
-{% extends 'mailer/base.html' %}
+{% extends 'mailings/base.html' %}
 {% block content %}
 <h2 class="display-2 text-center mb-4">Мои клиенты</h2>
 <div class="row">
     <div class="col-10"></div>
     <div class="col-2">
         <a class="btn btn-warning"
-           href="{% url 'mailer:create_client' %}">Создать клиента</a>
+           href="{% url 'mailings:create_client' %}">Создать клиента</a>
     </div>
 </div>
 <div class="table-responsive">
@@ -26,10 +26,10 @@
             <td>{{ object.comment }}</td>
             <td>{{ object.send_options_name }}</td>
             <td>
-                <a class="btn btn-info" href="{% url 'mailer:edit_client' object.pk %}" role="button">Редактировать</a>
+                <a class="btn btn-info" href="{% url 'mailings:edit_client' object.pk %}" role="button">Редактировать</a>
             </td>
             <td>
-                <a class="btn btn-danger" href="{% url 'mailer:delete_client' object.pk %}" role="button">Удалить</a>
+                <a class="btn btn-danger" href="{% url 'mailings:delete_client' object.pk %}" role="button">Удалить</a>
             </td>
 
         </tr>

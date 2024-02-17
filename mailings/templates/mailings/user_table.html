@@ -1,4 +1,4 @@
-{% extends 'mailer/base.html' %}
+{% extends 'mailings/base.html' %}
 {% block content %}
 <h2 class="display-2 text-center mb-4">Пользователи сервиса</h2>
 <div class="table-responsive">
@@ -17,7 +17,7 @@
             <td>{{ object.phone }}</td>
             <td>{{ object.is_active }}</td>
             <td>
-                <a class="btn btn-info" href="{% url 'mailer:edit_user' object.pk %}"
+                <a class="btn btn-info" href="{% url 'mailings:edit_user' object.pk %}"
                    role="button">Изменить активность</a>
             </td>
         </tr>
