@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.core.cache import cache
-from django.views.generic import DetailView, TemplateView, ListView
+from django.views.generic import DetailView
 
 from blogs.models import Blog
 
