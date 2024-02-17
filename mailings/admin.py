@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mailer.models import Client, SendOptions, Message
+from mailings.models import Client, SendOptions, Message
 
 
 @admin.register(Client)
