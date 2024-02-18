@@ -16,7 +16,7 @@ from users.models import User
 
 
 class BaseTemplateView(TemplateView):
-    template_name = 'mailer/statistics.html'
+    template_name = 'mailings/statistics.html'
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -53,7 +53,7 @@ class SendOptionsListView(LoginRequiredMixin, ListView):
 class SendOptionsCreateView(LoginRequiredMixin, CreateView):
     model = SendOptions
     form_class = SendOptionsForm
-    success_url = reverse_lazy('mailer:mailers_list')
+    success_url = reverse_lazy('mailings:mailers_list')
 
     def form_valid(self, form):
         send_params = form.save()
@@ -67,7 +67,7 @@ class SendOptionsCreateView(LoginRequiredMixin, CreateView):
 class SendOptionsUpdateView(LoginRequiredMixin, UpdateView):
     model = SendOptions
     form_class = SendOptionsForm
-    success_url = reverse_lazy('mailer:mailers_list')
+    success_url = reverse_lazy('mailings:mailers_list')
 
     def form_valid(self, form):
         send_params = form.save()
@@ -90,7 +90,7 @@ class SendOptionsUpdateView(LoginRequiredMixin, UpdateView):
 
 class SendOptionsDeleteView(LoginRequiredMixin, DeleteView):
     model = SendOptions
-    success_url = reverse_lazy('mailer:mailers_list')
+    success_url = reverse_lazy('mailings:mailers_list')
 
 
 class MessageListView(LoginRequiredMixin, ListView):
@@ -105,7 +105,7 @@ class MessageListView(LoginRequiredMixin, ListView):
 class MessageCreateView(LoginRequiredMixin, CreateView):
     model = Message
     form_class = MessageForm
-    success_url = reverse_lazy('mailer:message_list')
+    success_url = reverse_lazy('mailings:message_list')
 
     def form_valid(self, form):
         message_params = form.save()
@@ -117,12 +117,12 @@ class MessageCreateView(LoginRequiredMixin, CreateView):
 class MessageUpdateView(LoginRequiredMixin, UpdateView):
     model = Message
     form_class = MessageForm
-    success_url = reverse_lazy('mailer:message_list')
+    success_url = reverse_lazy('mailings:message_list')
 
 
 class MessageDeleteView(LoginRequiredMixin, DeleteView):
     model = Message
-    success_url = reverse_lazy('mailer:message_list')
+    success_url = reverse_lazy('mailings:message_list')
 
 
 class ClientListView(LoginRequiredMixin, ListView):
@@ -137,7 +137,7 @@ class ClientListView(LoginRequiredMixin, ListView):
 class ClientCreateView(LoginRequiredMixin, CreateView):
     model = Client
     form_class = ClientForm
-    success_url = reverse_lazy('mailer:client_list')
+    success_url = reverse_lazy('mailings:client_list')
 
     def form_valid(self, form):
         send_params = form.save()
@@ -149,12 +149,12 @@ class ClientCreateView(LoginRequiredMixin, CreateView):
 class ClientUpdateView(LoginRequiredMixin, UpdateView):
     model = Client
     form_class = ClientForm
-    success_url = reverse_lazy('mailer:client_list')
+    success_url = reverse_lazy('mailings:client_list')
 
 
 class ClientDeleteView(LoginRequiredMixin, DeleteView):
     model = Client
-    success_url = reverse_lazy('mailer:client_list')
+    success_url = reverse_lazy('mailings:client_list')
 
 
 class LogsListView(LoginRequiredMixin, ListView):
@@ -168,11 +168,11 @@ class LogsListView(LoginRequiredMixin, ListView):
 
 class UsersListView(LoginRequiredMixin, ListView):
     model = User
-    template_name = 'mailer/users_table.html'
+    template_name = 'mailings/users_table.html'
 
 
 class UsersUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UsersForm
-    template_name = 'mailer/user_activity_form.html'
-    success_url = reverse_lazy('mailer:users_table')
+    template_name = 'mailings/user_activity_form.html'
+    success_url = reverse_lazy('mailings:users_table')

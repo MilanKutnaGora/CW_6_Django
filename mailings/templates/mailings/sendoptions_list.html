@@ -7,9 +7,9 @@
     <div class="col-9"></div>
     <div class="col-3">
         <div class="btn-group mb-1" role="group">
-            <a class="btn btn-warning" style="width: 10rem;"
+            <a class="btn btn-outline-dark" style="width: 10rem;"
                href=" {% url 'mailings:create_mailer' %}">Создать рассылку</a>
-            <a class="btn btn-dark"
+            <a class="btn btn-outline-danger"
                href="{% url 'mailings:logs' %}">Отчет</a>
         </div>
     </div>
@@ -24,11 +24,11 @@
             {% if request.user|has_group:"manager" %}
             <th scope="col">Пользователь</th>
             {% endif %}
-            <th scope="col">Наименование рассылки</th>
-            <th scope="col">Время начала рассылки</th>
+            <th scope="col">Наименование</th>
+            <th scope="col">Время отправки</th>
             <th scope="col">Периодичность</th>
             <th scope="col">Статус</th>
-            <th scope="col">Тема рассылки</th>
+            <th scope="col">Тема</th>
         </tr>
         </thead>
         <tbody>
@@ -44,11 +44,11 @@
             <td>{{ object.mail_title }}</td>
             {% if not request.user|has_group:"manager" %}
             <td>
-                <a class="btn btn-info" href="{% url 'mailings:edit_mailer' object.pk %}"
+                <a class="btn btn-outline-dark" href="{% url 'mailings:edit_mailer' object.pk %}"
                    role="button">Редактировать</a>
             </td>
             <td>
-                <a class="btn btn-danger" href="{% url 'mailings:delete_mailer' object.pk %}"
+                <a class="btn btn-outline-danger" href="{% url 'mailings:delete_mailer' object.pk %}"
                    role="button">Удалить</a>
             </td>
             {% else %}
